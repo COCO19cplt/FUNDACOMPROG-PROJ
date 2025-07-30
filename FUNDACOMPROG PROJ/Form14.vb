@@ -13,7 +13,7 @@ Public Class Form14
         DataGridView1.Columns.Clear()
         ComboBox2.Items.Clear()
 
-        ' Set up DataGridView columns
+        ' Set up DataGridView columnslollll
         DataGridView1.Columns.Add("OrderID", "Order ID")
         DataGridView1.Columns.Add("Services", "Services")
         DataGridView1.Columns.Add("TotalAmount", "Total Amount")
