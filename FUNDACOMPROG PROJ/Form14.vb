@@ -12,7 +12,7 @@ Public Class Form14
         DataGridView1.Rows.Clear()
         DataGridView1.Columns.Clear()
         ComboBox2.Items.Clear()
-        'iya
+        'ljhjhgfgc
         DataGridView1.Columns.Add("OrderID", "Order ID")
         DataGridView1.Columns.Add("Services", "Services")
         DataGridView1.Columns.Add("TotalAmount", "Total Amount")
