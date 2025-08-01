@@ -134,7 +134,7 @@ Public Class Form13
         Finally
             If conn.State = ConnectionState.Open Then conn.Close()
         End Try
-
+        Form14.Show()
     End Sub
 
         Private Sub UpdateCartTotal()
@@ -153,6 +153,10 @@ Public Class Form13
     End Sub
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+
+    End Sub
+
+    Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown1.ValueChanged
 
     End Sub
 End Class

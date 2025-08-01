@@ -44,6 +44,7 @@ Partial Class Form10
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button12 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -169,6 +170,7 @@ Partial Class Form10
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Panel1.Controls.Add(Me.Button12)
         Me.Panel1.Controls.Add(Me.Button7)
         Me.Panel1.Controls.Add(Me.Button6)
         Me.Panel1.Controls.Add(Me.Button5)
@@ -245,6 +247,15 @@ Partial Class Form10
         Me.Button1.Text = "Users"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'Button12
+        '
+        Me.Button12.Location = New System.Drawing.Point(27, 493)
+        Me.Button12.Name = "Button12"
+        Me.Button12.Size = New System.Drawing.Size(110, 37)
+        Me.Button12.TabIndex = 11
+        Me.Button12.Text = "OrderedItems"
+        Me.Button12.UseVisualStyleBackColor = True
+        '
         'Form10
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -296,4 +307,5 @@ Partial Class Form10
     Friend WithEvents Button3 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents Button12 As Button
 End Class

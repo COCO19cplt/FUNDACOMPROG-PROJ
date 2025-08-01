@@ -26,6 +26,9 @@ Partial Class Form14
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -63,11 +66,41 @@ Partial Class Form14
         Me.DataGridView1.Size = New System.Drawing.Size(543, 488)
         Me.DataGridView1.TabIndex = 5
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(45, 112)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(57, 20)
+        Me.Label1.TabIndex = 6
+        Me.Label1.Text = "Label1"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(167, 112)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(57, 20)
+        Me.Label2.TabIndex = 7
+        Me.Label2.Text = "Label2"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(295, 112)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(57, 20)
+        Me.Label3.TabIndex = 8
+        Me.Label3.Text = "Label3"
+        '
         'Form14
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1033, 630)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TextBox1)
@@ -83,4 +116,7 @@ Partial Class Form14
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Button1 As Button
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
 End Class

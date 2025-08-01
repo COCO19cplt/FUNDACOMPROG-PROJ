@@ -1,17 +1,20 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class Form14
-    ' 1. Declare conn properly
     Private connectionString As String = "server=localhost;user id=root;password=;database=LoadLog;"
     Private conn As New MySqlConnection(connectionString)
     Private cmd As MySqlCommand
     Private query As String
 
-    ' Helper to refresh DataGridView
+    ' Make sure these labels exist on your form!
+    ' LabelTotalAmount, LabelAmountPaid, LabelOutstanding
+
     Private Sub RefreshData()
         DataGridView1.Rows.Clear()
         Try
-            conn.Open()
+            If conn.State <> ConnectionState.Open Then
+                conn.Open()
+            End If
             query = "SELECT o.OrderID, GROUP_CONCAT(s.ServiceName SEPARATOR ', ') AS Services, o.TotalAmount, o.OrderStatus, o.OrderDate " &
                     "FROM orders o " &
                     "JOIN order_items oi ON o.OrderID = oi.OrderID " &
@@ -29,6 +32,14 @@ Public Class Form14
         Finally
             If conn.State = ConnectionState.Open Then conn.Close()
         End Try
+        ResetLabels()
+    End Sub
+
+    Private Sub ResetLabels()
+        Label1.Text = "Order Total: ₱0"
+        Label2.Text = "Amount Paid: ₱0"
+        Label3.Text = "Outstanding: ₱0"
+        TextBox1.Text = ""
     End Sub
 
     Private Sub Form14_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -49,6 +60,54 @@ Public Class Form14
         ComboBox2.Items.Add("Card")
         DataGridView1.ReadOnly = True
         DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+
+        ResetLabels()
+    End Sub
+
+    Private Sub DataGridView1_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridView1.SelectionChanged
+        ' FIX: Only process if a valid, non-blank row is selected
+        If DataGridView1.SelectedRows.Count > 0 Then
+            Dim row As DataGridViewRow = DataGridView1.SelectedRows(0)
+            ' Make sure the row is not a new row or blank row
+            If row.IsNewRow OrElse row.Cells("OrderID").Value Is Nothing OrElse row.Cells("OrderID").Value.ToString() = "" Then
+                ResetLabels()
+                Exit Sub
+            End If
+
+            Dim orderId As String = row.Cells("OrderID").Value.ToString()
+            Dim totalAmount As Decimal
+            If Not Decimal.TryParse(row.Cells("TotalAmount").Value.ToString(), totalAmount) Then totalAmount = 0D
+            Dim amountPaid As Decimal = 0D
+
+            Try
+                If conn.State <> ConnectionState.Open Then
+                    conn.Open()
+                End If
+                query = $"SELECT IFNULL(SUM(Amount),0) FROM payments WHERE OrderID='{orderId}';"
+                cmd = New MySqlCommand(query, conn)
+                amountPaid = Convert.ToDecimal(cmd.ExecuteScalar())
+            Catch ex As Exception
+                amountPaid = 0D
+            Finally
+                If conn.State = ConnectionState.Open Then conn.Close()
+            End Try
+
+            Dim outstanding As Decimal = totalAmount - amountPaid
+            If outstanding < 0 Then outstanding = 0D
+
+            Label1.Text = "Order Total: ₱" & totalAmount.ToString("F2")
+            Label2.Text = "Amount Paid: ₱" & amountPaid.ToString("F2")
+            Label3.Text = "Outstanding: ₱" & outstanding.ToString("F2")
+
+            ' Suggest outstanding amount as default, but only if positive
+            If outstanding > 0 Then
+                TextBox1.Text = outstanding.ToString("F2")
+            Else
+                TextBox1.Text = ""
+            End If
+        Else
+            ResetLabels()
+        End If
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -58,72 +117,70 @@ Public Class Form14
                 Exit Sub
             End If
 
-            ' Sanitize inputs
-            Dim orderId As String = DataGridView1.SelectedRows(0).Cells("OrderID").Value.ToString().Replace("'", "''")
+            Dim row As DataGridViewRow = DataGridView1.SelectedRows(0)
+            If row.IsNewRow OrElse row.Cells("OrderID").Value Is Nothing OrElse row.Cells("OrderID").Value.ToString() = "" Then
+                MessageBox.Show("Please select a valid order.")
+                Exit Sub
+            End If
+
+            Dim orderId As String = row.Cells("OrderID").Value.ToString().Replace("'", "''")
             Dim paymentMethod As String = ComboBox2.SelectedItem.ToString().Replace("'", "''")
-            Dim amount As String = TextBox1.Text.Replace("'", "''")
+            Dim amountToPay As Decimal
+            If Not Decimal.TryParse(TextBox1.Text, amountToPay) Then
+                MessageBox.Show("Enter a valid payment amount.")
+                Exit Sub
+            End If
 
-            conn.Open()
+            Dim totalAmount As Decimal
+            If Not Decimal.TryParse(row.Cells("TotalAmount").Value.ToString(), totalAmount) Then totalAmount = 0D
+            Dim amountPaid As Decimal = 0D
+            If conn.State <> ConnectionState.Open Then
+                conn.Open()
+            End If
+            query = $"SELECT IFNULL(SUM(Amount),0) FROM payments WHERE OrderID='{orderId}';"
+            cmd = New MySqlCommand(query, conn)
+            amountPaid = Convert.ToDecimal(cmd.ExecuteScalar())
+            Dim outstanding As Decimal = totalAmount - amountPaid
+            If outstanding < 0 Then outstanding = 0D
 
-            ' Insert payment record
+            If amountToPay <= 0 OrElse amountToPay > outstanding Then
+                MessageBox.Show("Payment must be more than 0 and not exceed the outstanding balance.")
+                conn.Close()
+                Exit Sub
+            End If
+
             query = $"INSERT INTO payments (OrderID, PaymentDate, PaymentMethod, Amount, PaymentStatus) " &
-                    $"VALUES ('{orderId}', NOW(), '{paymentMethod}', '{amount}', 'PAID');"
+                    $"VALUES ('{orderId}', NOW(), '{paymentMethod}', '{amountToPay}', 'PENDING');"
             cmd = New MySqlCommand(query, conn)
             cmd.ExecuteNonQuery()
 
-            ' Calculate total paid for this order
-            Dim totalPaid As Decimal = 0D
             query = $"SELECT IFNULL(SUM(Amount),0) FROM payments WHERE OrderID='{orderId}';"
             cmd = New MySqlCommand(query, conn)
-            totalPaid = Convert.ToDecimal(cmd.ExecuteScalar())
+            Dim totalPaidAfter As Decimal = Convert.ToDecimal(cmd.ExecuteScalar())
 
-            ' Get the order's total amount
-            Dim orderTotal As Decimal = 0D
-            query = $"SELECT TotalAmount FROM orders WHERE OrderID='{orderId}';"
-            cmd = New MySqlCommand(query, conn)
-            orderTotal = Convert.ToDecimal(cmd.ExecuteScalar())
-
-            ' Decide order status
-            Dim newStatus As String
-            If totalPaid >= orderTotal Then
-                newStatus = "PAID"
-            ElseIf totalPaid > 0 Then
-                newStatus = "PARTIAL"
+            Dim newPaymentStatus As String
+            If totalPaidAfter >= totalAmount Then
+                newPaymentStatus = "PAID"
+            ElseIf totalPaidAfter > 0 Then
+                newPaymentStatus = "PARTIAL"
             Else
-                newStatus = "PENDING"
+                newPaymentStatus = "PENDING"
             End If
 
-            ' Update order status
-            query = $"UPDATE orders SET OrderStatus='{newStatus}' WHERE OrderID='{orderId}';"
+            query = $"UPDATE payments SET PaymentStatus='{newPaymentStatus}' WHERE PaymentID = (SELECT PaymentID FROM (SELECT PaymentID FROM payments WHERE OrderID='{orderId}' ORDER BY PaymentID DESC LIMIT 1) AS sub);"
             cmd = New MySqlCommand(query, conn)
             cmd.ExecuteNonQuery()
 
             MessageBox.Show("Payment recorded successfully.")
 
-            ' Refresh DataGridView
             RefreshData()
             ComboBox2.SelectedIndex = -1
             TextBox1.Clear()
+            If conn.State = ConnectionState.Open Then conn.Close()
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
-        Finally
             If conn.State = ConnectionState.Open Then conn.Close()
         End Try
-    End Sub
-
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-        If DataGridView1.SelectedRows.Count > 0 Then
-            Dim row As DataGridViewRow = DataGridView1.SelectedRows(0)
-            TextBox1.Text = row.Cells("TotalAmount").Value.ToString()
-        End If
-    End Sub
-
-    ' Optional: update amount box when a row is selected (even by keyboard)
-    Private Sub DataGridView1_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridView1.SelectionChanged
-        If DataGridView1.SelectedRows.Count > 0 Then
-            Dim row As DataGridViewRow = DataGridView1.SelectedRows(0)
-            TextBox1.Text = row.Cells("TotalAmount").Value.ToString()
-        End If
     End Sub
 
 End Class
