@@ -6,8 +6,9 @@ Public Class Form14
     Private cmd As MySqlCommand
     Private query As String
 
-    ' Make sure these labels exist on your form!oh
+    ' Make sure these labels exist on your form!
     ' LabelTotalAmount, LabelAmountPaid, LabelOutstanding
+    'ampogi ko parang james reid
 
     Private Sub RefreshData()
         DataGridView1.Rows.Clear()
