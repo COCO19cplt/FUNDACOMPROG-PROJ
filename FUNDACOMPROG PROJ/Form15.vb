@@ -42,7 +42,7 @@ Public Class Form15
     End Sub
 
     ' INSERT
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         Dim itemName As String = TextBox1.Text.Trim()
         Dim quantity As Integer = NumericUpDown1.Value
         Dim unit As String = ComboBox1.Text.Trim()
@@ -82,7 +82,7 @@ Public Class Form15
     End Sub
 
     ' UPDATE
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
         Dim itemID As String = TextBox4.Text.Trim()
         Dim itemName As String = TextBox1.Text.Trim()
         Dim quantity As Integer = NumericUpDown1.Value
@@ -126,7 +126,7 @@ Public Class Form15
     End Sub
 
     ' DELETE
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs)
         Dim itemID As String = TextBox4.Text.Trim()
 
         If itemID = "" Then
