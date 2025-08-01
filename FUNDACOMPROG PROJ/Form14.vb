@@ -6,9 +6,7 @@ Public Class Form14
     Private cmd As MySqlCommand
     Private query As String
 
-    ' Make sure these labels exist on your form!
-    ' LabelTotalAmount, LabelAmountPaid, LabelOutstanding
-    'ampogi ko parang james reid
+    ' Using default labels: Label1, Label2, Label3
 
     Private Sub RefreshData()
         DataGridView1.Rows.Clear()
@@ -24,9 +22,12 @@ Public Class Form14
                     "GROUP BY o.OrderID, o.TotalAmount, o.OrderStatus, o.OrderDate;"
             cmd = New MySqlCommand(query, conn)
             Dim rdr As MySqlDataReader = cmd.ExecuteReader()
+
             While rdr.Read()
                 DataGridView1.Rows.Add(rdr("OrderID").ToString(), rdr("Services").ToString(), rdr("TotalAmount").ToString(), rdr("OrderStatus").ToString(), rdr("OrderDate").ToString())
             End While
+
+            ' Only close reader after all rows are processed!
             rdr.Close()
         Catch ex As Exception
             MessageBox.Show("Error loading orders: " & ex.Message)
@@ -46,7 +47,7 @@ Public Class Form14
     Private Sub Form14_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DataGridView1.Rows.Clear()
         DataGridView1.Columns.Clear()
-        ComboBox2.Items.Clear()
+        ComboBox1.Items.Clear()
 
         DataGridView1.Columns.Add("OrderID", "Order ID")
         DataGridView1.Columns.Add("Services", "Services")
@@ -56,9 +57,9 @@ Public Class Form14
 
         RefreshData()
 
-        ComboBox2.Items.Add("Cash")
-        ComboBox2.Items.Add("GCash")
-        ComboBox2.Items.Add("Card")
+        ComboBox1.Items.Add("Cash")
+        ComboBox1.Items.Add("GCash")
+        ComboBox1.Items.Add("Card")
         DataGridView1.ReadOnly = True
         DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
 
@@ -66,10 +67,9 @@ Public Class Form14
     End Sub
 
     Private Sub DataGridView1_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridView1.SelectionChanged
-        ' FIX: Only process if a valid, non-blank row is selected
         If DataGridView1.SelectedRows.Count > 0 Then
             Dim row As DataGridViewRow = DataGridView1.SelectedRows(0)
-            ' Make sure the row is not a new row or blank row
+            ' Prevent error on blank/new row
             If row.IsNewRow OrElse row.Cells("OrderID").Value Is Nothing OrElse row.Cells("OrderID").Value.ToString() = "" Then
                 ResetLabels()
                 Exit Sub
@@ -100,7 +100,6 @@ Public Class Form14
             Label2.Text = "Amount Paid: ₱" & amountPaid.ToString("F2")
             Label3.Text = "Outstanding: ₱" & outstanding.ToString("F2")
 
-            ' Suggest outstanding amount as default, but only if positive
             If outstanding > 0 Then
                 TextBox1.Text = outstanding.ToString("F2")
             Else
@@ -113,7 +112,7 @@ Public Class Form14
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
-            If DataGridView1.SelectedRows.Count = 0 OrElse ComboBox2.SelectedIndex = -1 OrElse String.IsNullOrWhiteSpace(TextBox1.Text) Then
+            If DataGridView1.SelectedRows.Count = 0 OrElse ComboBox1.SelectedIndex = -1 OrElse String.IsNullOrWhiteSpace(TextBox1.Text) Then
                 MessageBox.Show("Please select an order, payment method, and enter amount.")
                 Exit Sub
             End If
@@ -125,7 +124,7 @@ Public Class Form14
             End If
 
             Dim orderId As String = row.Cells("OrderID").Value.ToString().Replace("'", "''")
-            Dim paymentMethod As String = ComboBox2.SelectedItem.ToString().Replace("'", "''")
+            Dim paymentMethod As String = ComboBox1.SelectedItem.ToString().Replace("'", "''")
             Dim amountToPay As Decimal
             If Not Decimal.TryParse(TextBox1.Text, amountToPay) Then
                 MessageBox.Show("Enter a valid payment amount.")
@@ -143,6 +142,13 @@ Public Class Form14
             amountPaid = Convert.ToDecimal(cmd.ExecuteScalar())
             Dim outstanding As Decimal = totalAmount - amountPaid
             If outstanding < 0 Then outstanding = 0D
+
+            ' Do not allow payment if outstanding is zero (already paid)
+            If outstanding <= 0 Then
+                MessageBox.Show("Order is already fully paid. No more payment required.")
+                conn.Close()
+                Exit Sub
+            End If
 
             If amountToPay <= 0 OrElse amountToPay > outstanding Then
                 MessageBox.Show("Payment must be more than 0 and not exceed the outstanding balance.")
@@ -175,7 +181,7 @@ Public Class Form14
             MessageBox.Show("Payment recorded successfully.")
 
             RefreshData()
-            ComboBox2.SelectedIndex = -1
+            ComboBox1.SelectedIndex = -1
             TextBox1.Clear()
             If conn.State = ConnectionState.Open Then conn.Close()
         Catch ex As Exception
@@ -184,4 +190,25 @@ Public Class Form14
         End Try
     End Sub
 
+    ' Add this in your Form14 code
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        If DataGridView1.SelectedRows.Count > 0 Then
+            DataGridView1.Rows.RemoveAt(DataGridView1.SelectedRows(0).Index)
+            UpdateOrderTotal()
+        End If
+    End Sub
+
+    Private Sub UpdateOrderTotal()
+        Dim total As Decimal = 0
+        For Each row As DataGridViewRow In DataGridView1.Rows
+            If Not row.IsNewRow AndAlso row.Cells("TotalAmount").Value IsNot Nothing Then
+                Dim value As Decimal
+                If Decimal.TryParse(row.Cells("TotalAmount").Value.ToString(), value) Then
+                    total += value
+                End If
+            End If
+        Next
+        Label1.Text = "Total: " & total.ToString("C2")
+    End Sub
 End Class
