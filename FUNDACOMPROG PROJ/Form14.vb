@@ -6,7 +6,7 @@ Public Class Form14
     Private cmd As MySqlCommand
     Private query As String
 
-    ' Make sure these labels exist on your form!
+    ' Make sure these labels exist on your form!oh
     ' LabelTotalAmount, LabelAmountPaid, LabelOutstanding
 
     Private Sub RefreshData()
