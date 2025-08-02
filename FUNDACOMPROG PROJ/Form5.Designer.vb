@@ -46,6 +46,7 @@ Partial Class Form5
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.Button12 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -135,6 +136,7 @@ Partial Class Form5
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Panel1.Controls.Add(Me.Button12)
         Me.Panel1.Controls.Add(Me.Button7)
         Me.Panel1.Controls.Add(Me.Button6)
         Me.Panel1.Controls.Add(Me.Button5)
@@ -263,6 +265,15 @@ Partial Class Form5
         Me.Label5.TabIndex = 30
         Me.Label5.Text = "Email"
         '
+        'Button12
+        '
+        Me.Button12.Location = New System.Drawing.Point(27, 493)
+        Me.Button12.Name = "Button12"
+        Me.Button12.Size = New System.Drawing.Size(110, 37)
+        Me.Button12.TabIndex = 12
+        Me.Button12.Text = "Order_Items"
+        Me.Button12.UseVisualStyleBackColor = True
+        '
         'Form5
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -318,4 +329,5 @@ Partial Class Form5
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
+    Friend WithEvents Button12 As Button
 End Class

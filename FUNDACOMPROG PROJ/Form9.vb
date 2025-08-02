@@ -173,4 +173,8 @@ Public Class Form9
     Private Sub Button4_Click(sender As Object, e As EventArgs)
 
     End Sub
+
+    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
+        Form11.Show()
+    End Sub
 End Class

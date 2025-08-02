@@ -36,14 +36,14 @@ Partial Class Form10
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button12 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -167,6 +167,69 @@ Partial Class Form10
         Me.DataGridView1.Size = New System.Drawing.Size(708, 303)
         Me.DataGridView1.TabIndex = 20
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(27, 200)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(110, 33)
+        Me.Button1.TabIndex = 0
+        Me.Button1.Text = "Users"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(27, 239)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(110, 33)
+        Me.Button2.TabIndex = 1
+        Me.Button2.Text = "Customers"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(27, 278)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(110, 37)
+        Me.Button3.TabIndex = 6
+        Me.Button3.Text = "Services"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(27, 321)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(110, 37)
+        Me.Button4.TabIndex = 7
+        Me.Button4.Text = "Inventory"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(27, 364)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(110, 37)
+        Me.Button5.TabIndex = 8
+        Me.Button5.Text = "Orders"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Button6
+        '
+        Me.Button6.Location = New System.Drawing.Point(27, 407)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(110, 37)
+        Me.Button6.TabIndex = 9
+        Me.Button6.Text = "Expenses"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'Button7
+        '
+        Me.Button7.Location = New System.Drawing.Point(27, 450)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(110, 37)
+        Me.Button7.TabIndex = 10
+        Me.Button7.Text = "Payments"
+        Me.Button7.UseVisualStyleBackColor = True
+        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
@@ -184,76 +247,13 @@ Partial Class Form10
         Me.Panel1.Size = New System.Drawing.Size(180, 629)
         Me.Panel1.TabIndex = 19
         '
-        'Button7
-        '
-        Me.Button7.Location = New System.Drawing.Point(27, 450)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(110, 37)
-        Me.Button7.TabIndex = 10
-        Me.Button7.Text = "Payments"
-        Me.Button7.UseVisualStyleBackColor = True
-        '
-        'Button6
-        '
-        Me.Button6.Location = New System.Drawing.Point(27, 407)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(110, 37)
-        Me.Button6.TabIndex = 9
-        Me.Button6.Text = "Expenses"
-        Me.Button6.UseVisualStyleBackColor = True
-        '
-        'Button5
-        '
-        Me.Button5.Location = New System.Drawing.Point(27, 364)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(110, 37)
-        Me.Button5.TabIndex = 8
-        Me.Button5.Text = "Orders"
-        Me.Button5.UseVisualStyleBackColor = True
-        '
-        'Button4
-        '
-        Me.Button4.Location = New System.Drawing.Point(27, 321)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(110, 37)
-        Me.Button4.TabIndex = 7
-        Me.Button4.Text = "Inventory"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(27, 278)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(110, 37)
-        Me.Button3.TabIndex = 6
-        Me.Button3.Text = "Services"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(27, 239)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(110, 33)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Customers"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(27, 200)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(110, 33)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Users"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'Button12
         '
         Me.Button12.Location = New System.Drawing.Point(27, 493)
         Me.Button12.Name = "Button12"
         Me.Button12.Size = New System.Drawing.Size(110, 37)
-        Me.Button12.TabIndex = 11
-        Me.Button12.Text = "OrderedItems"
+        Me.Button12.TabIndex = 12
+        Me.Button12.Text = "Order_Items"
         Me.Button12.UseVisualStyleBackColor = True
         '
         'Form10
@@ -299,13 +299,13 @@ Partial Class Form10
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Button7 As Button
-    Friend WithEvents Button6 As Button
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Button6 As Button
+    Friend WithEvents Button7 As Button
+    Friend WithEvents Panel1 As Panel
     Friend WithEvents Button12 As Button
 End Class

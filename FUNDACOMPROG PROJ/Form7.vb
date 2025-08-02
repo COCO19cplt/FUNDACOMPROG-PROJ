@@ -203,4 +203,7 @@ Public Class Form7
         End Try
     End Sub
 
+    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
+        Form11.Show()
+    End Sub
 End Class

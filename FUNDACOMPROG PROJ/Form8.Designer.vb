@@ -47,6 +47,7 @@ Partial Class Form8
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Button12 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -136,6 +137,7 @@ Partial Class Form8
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Panel1.Controls.Add(Me.Button12)
         Me.Panel1.Controls.Add(Me.Button7)
         Me.Panel1.Controls.Add(Me.Button6)
         Me.Panel1.Controls.Add(Me.Button5)
@@ -269,6 +271,15 @@ Partial Class Form8
         Me.Label4.TabIndex = 42
         Me.Label4.Text = "OrderID"
         '
+        'Button12
+        '
+        Me.Button12.Location = New System.Drawing.Point(27, 493)
+        Me.Button12.Name = "Button12"
+        Me.Button12.Size = New System.Drawing.Size(110, 37)
+        Me.Button12.TabIndex = 12
+        Me.Button12.Text = "Order_Items"
+        Me.Button12.UseVisualStyleBackColor = True
+        '
         'Form8
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -326,4 +337,5 @@ Partial Class Form8
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
+    Friend WithEvents Button12 As Button
 End Class

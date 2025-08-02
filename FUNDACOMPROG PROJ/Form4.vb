@@ -226,4 +226,8 @@ Public Class Form4
     Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
 
     End Sub
+
+    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
+        Form11.Show()
+    End Sub
 End Class

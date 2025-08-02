@@ -196,6 +196,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="staffform.Designer.vb">
+      <DependentUpon>staffform.vb</DependentUpon>
+    </Compile>
+    <Compile Include="staffform.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WAITING ROOM.Designer.vb">
+      <DependentUpon>WAITING ROOM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WAITING ROOM.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Admin.resx">
@@ -254,6 +266,12 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="staffform.resx">
+      <DependentUpon>staffform.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WAITING ROOM.resx">
+      <DependentUpon>WAITING ROOM.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

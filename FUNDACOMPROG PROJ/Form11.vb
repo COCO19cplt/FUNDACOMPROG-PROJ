@@ -30,4 +30,8 @@ Public Class Form11
             MsgBox("Error in collecting data from Database. Error is :" & ex.Message)
         End Try
     End Sub
+
+    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
+        Me.Show()
+    End Sub
 End Class

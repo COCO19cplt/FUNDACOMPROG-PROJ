@@ -197,4 +197,8 @@ Public Class Form6
             If conn.State = ConnectionState.Open Then conn.Close()
         End Try
     End Sub
+
+    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
+        Form11.Show()
+    End Sub
 End Class
