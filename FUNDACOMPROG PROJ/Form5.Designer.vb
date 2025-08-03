@@ -22,6 +22,7 @@ Partial Class Form5
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form5))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
@@ -41,6 +42,7 @@ Partial Class Form5
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button12 = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -260,6 +262,14 @@ Partial Class Form5
         Me.Button12.Text = "Order Items"
         Me.Button12.UseVisualStyleBackColor = False
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.Transparent
+        Me.Panel1.Location = New System.Drawing.Point(-2, -3)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(147, 550)
+        Me.Panel1.TabIndex = 26
+        '
         'Form5
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -286,9 +296,11 @@ Partial Class Form5
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.Panel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form5"
-        Me.Text = "Form5"
+        Me.Text = "  "
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -314,4 +326,5 @@ Partial Class Form5
     Friend WithEvents Button6 As Button
     Friend WithEvents Button7 As Button
     Friend WithEvents Button12 As Button
+    Friend WithEvents Panel1 As Panel
 End Class

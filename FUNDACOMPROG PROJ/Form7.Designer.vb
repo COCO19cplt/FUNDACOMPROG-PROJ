@@ -22,6 +22,7 @@ Partial Class Form7
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form7))
         Me.Button11 = New System.Windows.Forms.Button()
         Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
         Me.Button8 = New System.Windows.Forms.Button()
@@ -296,6 +297,7 @@ Partial Class Form7
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.DataGridView1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form7"
         Me.Text = " "

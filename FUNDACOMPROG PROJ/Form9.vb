@@ -1,184 +1,182 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class Form9
-    Private RefreshData()
-    ' 1. Declare conn properly
-    Private connectionString As String = "server=localhost;user id=root;password=;database=LoadLog;"
-    Private conn As New MySqlConnection(connectionString)
-    Private cmd As MySqlCommand
-    Private da As MySqlDataAdapter
-    Private ds As DataSet
-    Private query As String
+    Public CurrentUserID As Integer
 
-
-
-
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-        Try
-            ' Validate
-            If String.IsNullOrWhiteSpace(TextBox1.Text) OrElse
-               String.IsNullOrWhiteSpace(TextBox2.Text) OrElse
-               String.IsNullOrWhiteSpace(TextBox3.Text) OrElse
-               String.IsNullOrWhiteSpace(TextBox4.Text) Then
-
-                MessageBox.Show("Please fill in all required fields.")
-                Exit Sub
-            End If
-
-            ' 2. Open the connection
-            conn.Open()
-
-            ' 3. Build your INSERT query
-            query = $"INSERT INTO CUSTOMERS (CustomerName, PhoneNo, HomeAddress, Email) " &
-                    $"VALUES ('{TextBox1.Text}', '{TextBox2.Text}', '{TextBox3.Text}', '{TextBox4.Text}');"
-
-            ' 4. Create and execute the command
-            cmd = New MySqlCommand(query, conn)
-            cmd.ExecuteNonQuery()
-
-            MessageBox.Show("Customer added successfully.")
-        Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message)
-        Finally
-            ' 5. Ensure the connection is closed
-            If conn.State = ConnectionState.Open Then
-                conn.Close()
-            End If
-        End Try
-    End Sub
-
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs)
-        Try
-            ' 1. Make sure a row is selected in the grid
-            If DataGridView1.CurrentRow Is Nothing Then
-                MessageBox.Show("Please select a customer row to update.")
-                Return
-            End If
-
-            ' 2. Validate the 4 textboxes
-            If String.IsNullOrWhiteSpace(TextBox1.Text) OrElse
-           String.IsNullOrWhiteSpace(TextBox2.Text) OrElse
-           String.IsNullOrWhiteSpace(TextBox3.Text) OrElse
-           String.IsNullOrWhiteSpace(TextBox4.Text) Then
-
-                MessageBox.Show("Please fill in Name, Phone, Address and Email.")
-                Return
-            End If
-
-            ' 3. Grab CustomerID from the selected grid row
-            Dim customerId As Integer =
-            Convert.ToInt32(DataGridView1.CurrentRow.Cells("CustomerID").Value)
-
-            ' 4. Open connection
-            conn.Open()
-
-            ' 5. Build and execute the UPDATE
-            Dim sql = $"UPDATE CUSTOMERS SET " &
-                  $"CustomerName = '{TextBox1.Text}', " &
-                  $"PhoneNo      = '{TextBox2.Text}', " &
-                  $"HomeAddress  = '{TextBox3.Text}', " &
-                  $"Email        = '{TextBox4.Text}' " &
-                  $"WHERE CustomerID = {customerId};"
-
-            cmd = New MySqlCommand(sql, conn)
-            cmd.ExecuteNonQuery()
-
-            MessageBox.Show("Customer updated successfully.")
-        Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message)
-        Finally
-            ' 6. Ensure connection is closed
-            If conn.State = ConnectionState.Open Then
-                conn.Close()
-            End If
-
-            ' 7. Refresh the grid to show changes
-
-        End Try
-    End Sub
-
-
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub TextBox4_TextChanged(sender As Object, e As EventArgs)
-
-    End Sub
+    Dim conn As New MySqlConnection("server=localhost;user id=root;password=;database=loadlog")
 
     Private Sub Form9_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        LoadInventory()
+        LoadUnits()
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs)
+    Private Sub LoadInventory()
         Try
-            ' 1. Validate that a customer name is entered
-            If String.IsNullOrWhiteSpace(TextBox1.Text) Then
-                MessageBox.Show("Please enter the customer name to delete.")
-                Exit Sub
-            End If
-
-            Dim nameToDelete As String = TextBox1.Text
-
-            ' 2. Confirm with the user
-            Dim result As DialogResult = MessageBox.Show(
-                $"Are you sure you want to delete customer '{nameToDelete}'?",
-                "Confirm Delete",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning
-            )
-            If result = DialogResult.No Then Exit Sub
-
-            conn.Open()
-
-            ' 3. Delete from CUSTOMERS matching the exact name
-            query = $"DELETE FROM CUSTOMERS WHERE CustomerName = '{nameToDelete}';"
-            cmd = New MySqlCommand(query, conn)
-            cmd.ExecuteNonQuery()
-
-            MessageBox.Show("Customer deleted successfully.")
-            conn.Close()
-
-            ' 4. Refresh and clear
-
-            TextBox1.Clear()
-            TextBox2.Clear()
-            TextBox3.Clear()
-            TextBox4.Clear()
-
+            Dim cmd As New MySqlCommand("SELECT * FROM inventory", conn)
+            Dim adapter As New MySqlDataAdapter(cmd)
+            Dim dt As New DataTable()
+            adapter.Fill(dt)
+            DataGridView1.DataSource = dt
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message)
-            If conn.State = ConnectionState.Open Then conn.Close()
+            MessageBox.Show("Error loading inventory: " & ex.Message)
         End Try
     End Sub
 
-    Private Sub Button6_Click(sender As Object, e As EventArgs)
-
+    Private Sub LoadUnits()
+        ComboBox1.Items.Clear()
+        ComboBox1.Items.AddRange(New String() {"pcs", "kg", "liters", "packs"})
+        ComboBox1.SelectedIndex = 0
     End Sub
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs)
+    ' INSERT
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim itemName As String = TextBox1.Text.Trim()
+        Dim quantityStr As String = TextBox2.Text.Trim()
+        Dim unit As String = ComboBox1.Text.Trim()
+        Dim lastRestocked As String = DateTimePicker1.Value.ToString("yyyy-MM-dd HH:mm:ss")
+        Dim costPerUnitStr As String = TextBox3.Text.Trim()
+        Dim userID As Integer = CurrentUserID
 
+        ' Validation
+        If itemName = "" Then
+            MessageBox.Show("Item Name is required.")
+            Return
+        ElseIf quantityStr = "" Then
+            MessageBox.Show("Quantity is required.")
+            Return
+        ElseIf unit = "" Then
+            MessageBox.Show("Unit is required.")
+            Return
+        ElseIf userID = 0 Then
+            MessageBox.Show("UserID is required.")
+            Return
+        End If
+
+        Dim restockedPart As String = If(DateTimePicker1.Checked, "'" & lastRestocked & "'", "NULL")
+        Dim costPart As String = If(costPerUnitStr = "", "NULL", costPerUnitStr)
+
+        Dim query As String = "INSERT INTO inventory (ItemName, Quantity, Unit, LastRestocked, CostPerUnit, UserID) VALUES (" &
+                              "'" & itemName.Replace("'", "''") & "', " & quantityStr & ", '" & unit.Replace("'", "''") & "', " &
+                              restockedPart & ", " & costPart & ", " & userID & ")"
+
+        Try
+            Dim cmd As New MySqlCommand(query, conn)
+            conn.Open()
+            cmd.ExecuteNonQuery()
+            conn.Close()
+            MessageBox.Show("Item inserted.")
+            LoadInventory()
+        Catch ex As Exception
+            MessageBox.Show("Insert error: " & ex.Message)
+            conn.Close()
+        End Try
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs)
+    ' UPDATE
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim itemID As String = TextBox4.Text.Trim()
+        Dim itemName As String = TextBox1.Text.Trim()
+        Dim quantityStr As String = TextBox2.Text.Trim()
+        Dim unit As String = ComboBox1.Text.Trim()
+        Dim lastRestocked As String = DateTimePicker1.Value.ToString("yyyy-MM-dd HH:mm:ss")
+        Dim costPerUnitStr As String = TextBox3.Text.Trim()
+        Dim userID As Integer = CurrentUserID
 
+        If itemID = "" Then
+            MessageBox.Show("Enter ItemID to update.")
+            Return
+        End If
+
+        Dim restockedPart As String = If(DateTimePicker1.Checked, "'" & lastRestocked & "'", "NULL")
+        Dim costPart As String = If(costPerUnitStr = "", "NULL", costPerUnitStr)
+
+        Dim query As String = "UPDATE inventory SET " &
+                              "ItemName = '" & itemName.Replace("'", "''") & "', " &
+                              "Quantity = " & quantityStr & ", " &
+                              "Unit = '" & unit.Replace("'", "''") & "', " &
+                              "LastRestocked = " & restockedPart & ", " &
+                              "CostPerUnit = " & costPart & ", " &
+                              "UserID = " & userID & " " &
+                              "WHERE ItemID = " & itemID
+
+        Try
+            Dim cmd As New MySqlCommand(query, conn)
+            conn.Open()
+            Dim rows = cmd.ExecuteNonQuery()
+            conn.Close()
+            If rows > 0 Then
+                MessageBox.Show("Item updated.")
+                LoadInventory()
+            Else
+                MessageBox.Show("ItemID not found.")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Update error: " & ex.Message)
+            conn.Close()
+        End Try
     End Sub
 
-    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
+    ' DELETE
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim itemID As String = TextBox4.Text.Trim()
+
+        If itemID = "" Then
+            MessageBox.Show("Enter ItemID to delete.")
+            Return
+        End If
+
+        Dim query As String = "DELETE FROM inventory WHERE ItemID = " & itemID
+
+        Try
+            Dim cmd As New MySqlCommand(query, conn)
+            conn.Open()
+            Dim rows = cmd.ExecuteNonQuery()
+            conn.Close()
+            If rows > 0 Then
+                MessageBox.Show("Item deleted.")
+                LoadInventory()
+            Else
+                MessageBox.Show("ItemID not found.")
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Delete error: " & ex.Message)
+            conn.Close()
+        End Try
+    End Sub
+
+
+
+    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+        Form4.Show()
+        Me.Hide()
+    End Sub
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Form5.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        Form6.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Form7.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Form8.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        Form10.Show()
+        Me.Hide()
+    End Sub
+    Private Sub Button12_Click(sender As Object, e As EventArgs)
         Form11.Show()
+        Me.Hide()
     End Sub
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
-
-    End Sub
 End Class

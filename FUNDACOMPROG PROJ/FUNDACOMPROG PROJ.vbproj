@@ -355,5 +355,14 @@
   <ItemGroup>
     <None Include="Resources\loadlog %289%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loadlog %2810%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loadlog %2811%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loadlog %2812%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

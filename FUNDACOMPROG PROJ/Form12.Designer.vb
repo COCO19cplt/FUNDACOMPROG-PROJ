@@ -37,100 +37,107 @@ Partial Class Form12
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(111, 96)
+        Me.TextBox1.Location = New System.Drawing.Point(332, 141)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 26)
+        Me.TextBox1.Size = New System.Drawing.Size(279, 22)
         Me.TextBox1.TabIndex = 0
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(122, 171)
+        Me.TextBox2.Location = New System.Drawing.Point(332, 196)
+        Me.TextBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 26)
+        Me.TextBox2.Size = New System.Drawing.Size(279, 22)
         Me.TextBox2.TabIndex = 1
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(116, 233)
+        Me.TextBox3.Location = New System.Drawing.Point(332, 261)
+        Me.TextBox3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(100, 26)
+        Me.TextBox3.Size = New System.Drawing.Size(279, 22)
         Me.TextBox3.TabIndex = 2
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(110, 311)
+        Me.TextBox4.Location = New System.Drawing.Point(332, 326)
+        Me.TextBox4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(100, 26)
+        Me.TextBox4.Size = New System.Drawing.Size(279, 22)
         Me.TextBox4.TabIndex = 3
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(133, 389)
+        Me.Button1.Location = New System.Drawing.Point(71, 468)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.Size = New System.Drawing.Size(106, 33)
         Me.Button1.TabIndex = 4
-        Me.Button1.Text = "Button1"
+        Me.Button1.Text = "INSERT"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(133, 475)
+        Me.Button2.Location = New System.Drawing.Point(406, 468)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.Size = New System.Drawing.Size(106, 33)
         Me.Button2.TabIndex = 5
-        Me.Button2.Text = "Button2"
+        Me.Button2.Text = "UPDATE"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(141, 69)
+        Me.Label1.Location = New System.Drawing.Point(209, 144)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(55, 20)
+        Me.Label1.Size = New System.Drawing.Size(47, 17)
         Me.Label1.TabIndex = 6
         Me.Label1.Text = "NAME"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(157, 154)
+        Me.Label2.Location = New System.Drawing.Point(209, 209)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(92, 20)
+        Me.Label2.Size = New System.Drawing.Size(82, 17)
         Me.Label2.TabIndex = 7
         Me.Label2.Text = "PHONE NO"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(141, 210)
+        Me.Label3.Location = New System.Drawing.Point(209, 274)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(89, 20)
+        Me.Label3.Size = New System.Drawing.Size(74, 17)
         Me.Label3.TabIndex = 8
         Me.Label3.Text = "ADDRESS"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(140, 302)
+        Me.Label4.Location = New System.Drawing.Point(209, 339)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(58, 20)
+        Me.Label4.Size = New System.Drawing.Size(48, 17)
         Me.Label4.TabIndex = 9
         Me.Label4.Text = "EMAIL"
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(518, 362)
+        Me.Button3.Location = New System.Drawing.Point(686, 468)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.Size = New System.Drawing.Size(106, 33)
         Me.Button3.TabIndex = 10
-        Me.Button3.Text = "Button3"
+        Me.Button3.Text = "DELETE"
         Me.Button3.UseVisualStyleBackColor = True
         '
         'Form12
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1033, 630)
+        Me.ClientSize = New System.Drawing.Size(862, 545)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
@@ -142,6 +149,7 @@ Partial Class Form12
         Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form12"
         Me.Text = "Form12"
         Me.ResumeLayout(False)

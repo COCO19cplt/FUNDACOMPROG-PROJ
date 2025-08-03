@@ -158,7 +158,7 @@ Partial Class Form8
         Me.Button12.Location = New System.Drawing.Point(18, 476)
         Me.Button12.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(116, 33)
+        Me.Button12.Size = New System.Drawing.Size(116, 31)
         Me.Button12.TabIndex = 12
         Me.Button12.Text = "Order Items"
         Me.Button12.UseVisualStyleBackColor = False
@@ -171,7 +171,7 @@ Partial Class Form8
         Me.Button7.Location = New System.Drawing.Point(18, 434)
         Me.Button7.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(116, 33)
+        Me.Button7.Size = New System.Drawing.Size(116, 31)
         Me.Button7.TabIndex = 10
         Me.Button7.Text = "Payments"
         Me.Button7.UseVisualStyleBackColor = False
@@ -184,7 +184,7 @@ Partial Class Form8
         Me.Button6.Location = New System.Drawing.Point(18, 387)
         Me.Button6.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(116, 33)
+        Me.Button6.Size = New System.Drawing.Size(116, 31)
         Me.Button6.TabIndex = 9
         Me.Button6.Text = "Expenses"
         Me.Button6.UseVisualStyleBackColor = False
@@ -197,7 +197,7 @@ Partial Class Form8
         Me.Button5.Location = New System.Drawing.Point(18, 344)
         Me.Button5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(116, 33)
+        Me.Button5.Size = New System.Drawing.Size(116, 31)
         Me.Button5.TabIndex = 8
         Me.Button5.Text = "Orders"
         Me.Button5.UseVisualStyleBackColor = False
@@ -210,7 +210,7 @@ Partial Class Form8
         Me.Button4.Location = New System.Drawing.Point(18, 299)
         Me.Button4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(116, 33)
+        Me.Button4.Size = New System.Drawing.Size(116, 31)
         Me.Button4.TabIndex = 7
         Me.Button4.Text = "Inventory"
         Me.Button4.UseVisualStyleBackColor = False
@@ -223,7 +223,7 @@ Partial Class Form8
         Me.Button3.Location = New System.Drawing.Point(18, 255)
         Me.Button3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(116, 33)
+        Me.Button3.Size = New System.Drawing.Size(116, 31)
         Me.Button3.TabIndex = 6
         Me.Button3.Text = "Services"
         Me.Button3.UseVisualStyleBackColor = False
@@ -236,7 +236,7 @@ Partial Class Form8
         Me.Button2.Location = New System.Drawing.Point(18, 216)
         Me.Button2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(116, 33)
+        Me.Button2.Size = New System.Drawing.Size(116, 31)
         Me.Button2.TabIndex = 1
         Me.Button2.Text = "Customers"
         Me.Button2.UseVisualStyleBackColor = False
@@ -249,7 +249,7 @@ Partial Class Form8
         Me.Button1.Location = New System.Drawing.Point(18, 172)
         Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(116, 33)
+        Me.Button1.Size = New System.Drawing.Size(116, 31)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Users"
         Me.Button1.UseVisualStyleBackColor = False

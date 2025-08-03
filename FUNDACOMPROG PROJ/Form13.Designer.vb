@@ -49,9 +49,10 @@ Partial Class Form13
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Location = New System.Drawing.Point(3, 0)
+        Me.TabControl1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1030, 629)
+        Me.TabControl1.Size = New System.Drawing.Size(916, 503)
         Me.TabControl1.TabIndex = 0
         '
         'TabPage1
@@ -62,10 +63,11 @@ Partial Class Form13
         Me.TabPage1.Controls.Add(Me.TextBox1)
         Me.TabPage1.Controls.Add(Me.DataGridView1)
         Me.TabPage1.Controls.Add(Me.NumericUpDown1)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 29)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1022, 596)
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TabPage1.Size = New System.Drawing.Size(908, 474)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "TabPage1"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -73,52 +75,57 @@ Partial Class Form13
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(136, 73)
+        Me.Label2.Location = New System.Drawing.Point(67, 75)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(117, 20)
+        Me.Label2.Size = New System.Drawing.Size(101, 17)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "INSTRUCTION"
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(852, 505)
+        Me.Button2.Location = New System.Drawing.Point(757, 404)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(131, 61)
+        Me.Button2.Size = New System.Drawing.Size(116, 49)
         Me.Button2.TabIndex = 4
         Me.Button2.Text = "VIEW ORDER"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(392, 417)
+        Me.Button1.Location = New System.Drawing.Point(348, 334)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(106, 62)
+        Me.Button1.Size = New System.Drawing.Size(94, 50)
         Me.Button1.TabIndex = 3
         Me.Button1.Text = "ADD TO CART"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(147, 117)
+        Me.TextBox1.Location = New System.Drawing.Point(67, 111)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 26)
+        Me.TextBox1.Size = New System.Drawing.Size(107, 22)
         Me.TextBox1.TabIndex = 2
         '
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(350, 6)
+        Me.DataGridView1.Location = New System.Drawing.Point(311, 5)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 62
         Me.DataGridView1.RowTemplate.Height = 28
-        Me.DataGridView1.Size = New System.Drawing.Size(630, 365)
+        Me.DataGridView1.Size = New System.Drawing.Size(560, 292)
         Me.DataGridView1.TabIndex = 1
         '
         'NumericUpDown1
         '
-        Me.NumericUpDown1.Location = New System.Drawing.Point(127, 201)
+        Me.NumericUpDown1.Location = New System.Drawing.Point(67, 178)
+        Me.NumericUpDown1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(120, 26)
+        Me.NumericUpDown1.Size = New System.Drawing.Size(107, 22)
         Me.NumericUpDown1.TabIndex = 0
         '
         'TabPage2
@@ -128,10 +135,11 @@ Partial Class Form13
         Me.TabPage2.Controls.Add(Me.Button4)
         Me.TabPage2.Controls.Add(Me.Button3)
         Me.TabPage2.Controls.Add(Me.DataGridView2)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 29)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1022, 596)
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TabPage2.Size = New System.Drawing.Size(908, 474)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "TabPage2"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -139,35 +147,38 @@ Partial Class Form13
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(236, 143)
+        Me.Label1.Location = New System.Drawing.Point(210, 114)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(57, 20)
+        Me.Label1.Size = New System.Drawing.Size(51, 17)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Label1"
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(859, 529)
+        Me.Button5.Location = New System.Drawing.Point(764, 423)
+        Me.Button5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(120, 36)
+        Me.Button5.Size = New System.Drawing.Size(107, 29)
         Me.Button5.TabIndex = 3
         Me.Button5.Text = "CONFIRM"
         Me.Button5.UseVisualStyleBackColor = True
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(470, 468)
+        Me.Button4.Location = New System.Drawing.Point(418, 374)
+        Me.Button4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(97, 51)
+        Me.Button4.Size = New System.Drawing.Size(86, 41)
         Me.Button4.TabIndex = 2
         Me.Button4.Text = "DELETE"
         Me.Button4.UseVisualStyleBackColor = True
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(42, 483)
+        Me.Button3.Location = New System.Drawing.Point(37, 386)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(155, 69)
+        Me.Button3.Size = New System.Drawing.Size(138, 55)
         Me.Button3.TabIndex = 1
         Me.Button3.Text = "BACK TO SERVICE"
         Me.Button3.UseVisualStyleBackColor = True
@@ -175,19 +186,21 @@ Partial Class Form13
         'DataGridView2
         '
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Location = New System.Drawing.Point(431, 29)
+        Me.DataGridView2.Location = New System.Drawing.Point(383, 23)
+        Me.DataGridView2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.RowHeadersWidth = 62
         Me.DataGridView2.RowTemplate.Height = 28
-        Me.DataGridView2.Size = New System.Drawing.Size(528, 416)
+        Me.DataGridView2.Size = New System.Drawing.Size(469, 333)
         Me.DataGridView2.TabIndex = 0
         '
         'Form13
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1033, 630)
+        Me.ClientSize = New System.Drawing.Size(918, 504)
         Me.Controls.Add(Me.TabControl1)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form13"
         Me.Text = "Form13"
         Me.TabControl1.ResumeLayout(False)
