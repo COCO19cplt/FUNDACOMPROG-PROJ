@@ -65,7 +65,7 @@ Public Class Form12
 
 
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs)
         Form13.Show()
     End Sub
 
@@ -79,31 +79,65 @@ Public Class Form12
 
     ' Button2: Add new customer from TextBox2–TextBox5
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs)
-        ' 1) Validate inputs
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+        TextBox5.Show()
+
+        Try
+            ' 1. Validate input
+            If String.IsNullOrWhiteSpace(TextBox5.Text) OrElse
+               String.IsNullOrWhiteSpace(TextBox1.Text) OrElse
+               String.IsNullOrWhiteSpace(TextBox2.Text) OrElse
+               String.IsNullOrWhiteSpace(TextBox3.Text) OrElse
+               String.IsNullOrWhiteSpace(TextBox4.Text) Then
+                MessageBox.Show("Please enter CustomerID and all updated details.")
+                Exit Sub
+            End If
+
+            ' 2. Open connection
+            conn.Open()
+
+            ' 3. Build the UPDATE query
+            query = "UPDATE customers SET " &
+                    "CustomerName = '" & TextBox1.Text.Replace("'", "''") & "', " &
+                    "PhoneNo = '" & TextBox2.Text.Replace("'", "''") & "', " &
+                    "HomeAddress = '" & TextBox3.Text.Replace("'", "''") & "', " &
+                    "Email = '" & TextBox4.Text.Replace("'", "''") & "' " &
+                    "WHERE CustomerID = " & TextBox5.Text
+
+            ' 4. Execute
+            cmd = New MySqlCommand(query, conn)
+            Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
+
+            If rowsAffected > 0 Then
+                MessageBox.Show("Customer updated successfully.")
+            Else
+                MessageBox.Show("No customer found with the provided ID.")
+            End If
+
+            ' 5. Clear inputs
+            TextBox1.Clear()
+            TextBox2.Clear()
+            TextBox3.Clear()
+            TextBox4.Clear()
+            TextBox5.Clear()
+
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        Finally
+            If conn.State = ConnectionState.Open Then
+                conn.Close()
+            End If
+        End Try
+    End Sub
+
+    Private Sub Form12_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 
-    Private Sub RefreshOrders()
-        ' This is just a placeholder.
-        ' You can reload DataGridView3 here if needed.
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-
-    Private Sub DataGridView4_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
-
-    End Sub
-
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub TextBox7_TextChanged(sender As Object, e As EventArgs)
-
+    Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles Button3.Click
+        Form13.Show()
+        Me.Hide()
     End Sub
 End Class
 

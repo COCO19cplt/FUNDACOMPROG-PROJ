@@ -8,7 +8,7 @@ Public Class WAITING_ROOM
     Public Property CurrentCustomerID As Integer = 0
 
     Private Sub WAITING_ROOM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Label1.Text = "Thank you for your order!"
+        Label1.Text = "Thank you for availing our services!"
         ShowOrderInfo()
     End Sub
 

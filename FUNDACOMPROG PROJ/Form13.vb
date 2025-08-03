@@ -71,7 +71,7 @@ Public Class Form13
         TabControl1.SelectedIndex = 1
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs)
         TabControl1.SelectedIndex = 0
     End Sub
 
@@ -84,7 +84,7 @@ Public Class Form13
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         If DataGridView2.Rows.Count = 0 Or DataGridView2.Rows.GetRowCount(DataGridViewElementStates.None) = 1 Then
-            MessageBox.Show("Cart is empty. Please add at least one service.")
+            MessageBox.Show("No service availed. Please add at least one service.")
             Exit Sub
         End If
 
@@ -151,19 +151,4 @@ Public Class Form13
         Label1.Text = "Total: " & total.ToString("C2")
     End Sub
 
-    Private Sub TabPage2_Click(sender As Object, e As EventArgs) Handles TabPage2.Click
-
-    End Sub
-
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
-
-    End Sub
-
-    Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown1.ValueChanged
-
-    End Sub
-
-    Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
-
-    End Sub
 End Class
