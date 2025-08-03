@@ -7,10 +7,10 @@ Public Class Form3
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
         ComboBox1.Items.Add("LOGIN INTERFACE")
         ComboBox1.Items.Add("ABOUT US")
-        If ComboBox1.SelectedItem = "LOGIN INTERFACE" Then
+        If ComboBox1.SelectedItem = "HOME" Then
             Form1.Show()
-        ElseIf ComboBox1.SelectedItem = "ABOUT US" Then
-            Me.Show()
+        ElseIf ComboBox1.SelectedItem = "LOG IN" Then
+            Form2.Show()
         End If
     End Sub
 

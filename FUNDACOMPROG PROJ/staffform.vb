@@ -15,7 +15,10 @@ Public Class Staffform
         ComboBox1.Items.Add("Preparing")
         ComboBox1.Items.Add("Ready to pick up")
         ComboBox1.Items.Add("Completed")
+
+
     End Sub
+
 
     '=== TAB 1: Orders ===
     Private Sub LoadOrders()
@@ -202,4 +205,7 @@ Public Class Staffform
         LoadItemStatuses()
     End Sub
 
+    Private Sub TabPage3_Click(sender As Object, e As EventArgs) Handles TabPage3.Click
+
+    End Sub
 End Class

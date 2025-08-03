@@ -48,17 +48,17 @@ Partial Class Form15
         '
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Font = New System.Drawing.Font("Gadugi", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label5.Location = New System.Drawing.Point(659, 202)
+        Me.Label5.Location = New System.Drawing.Point(636, 207)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(70, 21)
+        Me.Label5.Size = New System.Drawing.Size(64, 20)
         Me.Label5.TabIndex = 56
         Me.Label5.Text = "ItemID"
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(550, 200)
+        Me.TextBox4.Location = New System.Drawing.Point(527, 205)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(100, 22)
         Me.TextBox4.TabIndex = 55
@@ -68,7 +68,7 @@ Partial Class Form15
         Me.Button3.BackColor = System.Drawing.Color.Tan
         Me.Button3.Font = New System.Drawing.Font("Modern No. 20", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button3.Location = New System.Drawing.Point(753, 492)
+        Me.Button3.Location = New System.Drawing.Point(725, 496)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(99, 33)
         Me.Button3.TabIndex = 54
@@ -80,7 +80,7 @@ Partial Class Form15
         Me.Button2.BackColor = System.Drawing.Color.Tan
         Me.Button2.Font = New System.Drawing.Font("Modern No. 20", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button2.Location = New System.Drawing.Point(648, 492)
+        Me.Button2.Location = New System.Drawing.Point(620, 496)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(99, 33)
         Me.Button2.TabIndex = 53
@@ -92,7 +92,7 @@ Partial Class Form15
         Me.Button1.BackColor = System.Drawing.Color.Tan
         Me.Button1.Font = New System.Drawing.Font("Modern No. 20", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Button1.Location = New System.Drawing.Point(543, 492)
+        Me.Button1.Location = New System.Drawing.Point(515, 496)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(99, 33)
         Me.Button1.TabIndex = 52
@@ -103,11 +103,11 @@ Partial Class Form15
         '
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Font = New System.Drawing.Font("Gadugi", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label8.Location = New System.Drawing.Point(659, 298)
+        Me.Label8.Location = New System.Drawing.Point(636, 303)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(117, 21)
+        Me.Label8.Size = New System.Drawing.Size(104, 20)
         Me.Label8.TabIndex = 51
         Me.Label8.Text = "CostPerUnit"
         '
@@ -115,11 +115,11 @@ Partial Class Form15
         '
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Gadugi", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label4.Location = New System.Drawing.Point(679, 394)
+        Me.Label4.Location = New System.Drawing.Point(656, 399)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(48, 21)
+        Me.Label4.Size = New System.Drawing.Size(43, 20)
         Me.Label4.TabIndex = 50
         Me.Label4.Text = "Unit"
         '
@@ -127,11 +127,11 @@ Partial Class Form15
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Gadugi", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label3.Location = New System.Drawing.Point(679, 346)
+        Me.Label3.Location = New System.Drawing.Point(656, 351)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(87, 21)
+        Me.Label3.Size = New System.Drawing.Size(79, 20)
         Me.Label3.TabIndex = 49
         Me.Label3.Text = "Quantity"
         '
@@ -139,11 +139,11 @@ Partial Class Form15
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Gadugi", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label2.Location = New System.Drawing.Point(659, 250)
+        Me.Label2.Location = New System.Drawing.Point(636, 255)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(102, 21)
+        Me.Label2.Size = New System.Drawing.Size(93, 20)
         Me.Label2.TabIndex = 48
         Me.Label2.Text = "ItemName"
         '
@@ -155,7 +155,7 @@ Partial Class Form15
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(518, 377)
+        Me.DataGridView1.Size = New System.Drawing.Size(469, 377)
         Me.DataGridView1.TabIndex = 47
         '
         'DateTimePicker1
@@ -167,7 +167,7 @@ Partial Class Form15
         Me.DateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.Tan
         Me.DateTimePicker1.CalendarTrailingForeColor = System.Drawing.Color.Tan
         Me.DateTimePicker1.Font = New System.Drawing.Font("Modern No. 20", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker1.Location = New System.Drawing.Point(547, 152)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(527, 152)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(229, 24)
         Me.DateTimePicker1.TabIndex = 46
@@ -175,7 +175,7 @@ Partial Class Form15
         'ComboBox2
         '
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(550, 442)
+        Me.ComboBox2.Location = New System.Drawing.Point(527, 447)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(121, 24)
         Me.ComboBox2.TabIndex = 45
@@ -183,7 +183,7 @@ Partial Class Form15
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(550, 392)
+        Me.ComboBox1.Location = New System.Drawing.Point(527, 397)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(121, 24)
         Me.ComboBox1.TabIndex = 44
@@ -191,7 +191,7 @@ Partial Class Form15
         '
         'NumericUpDown1
         '
-        Me.NumericUpDown1.Location = New System.Drawing.Point(550, 344)
+        Me.NumericUpDown1.Location = New System.Drawing.Point(527, 349)
         Me.NumericUpDown1.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
         Me.NumericUpDown1.Name = "NumericUpDown1"
         Me.NumericUpDown1.Size = New System.Drawing.Size(120, 22)
@@ -199,14 +199,14 @@ Partial Class Form15
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(550, 296)
+        Me.TextBox3.Location = New System.Drawing.Point(527, 301)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(100, 22)
         Me.TextBox3.TabIndex = 42
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(550, 248)
+        Me.TextBox1.Location = New System.Drawing.Point(527, 253)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(100, 22)
         Me.TextBox1.TabIndex = 41
@@ -215,11 +215,11 @@ Partial Class Form15
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Gadugi", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label1.Location = New System.Drawing.Point(679, 442)
+        Me.Label1.Location = New System.Drawing.Point(656, 447)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(70, 21)
+        Me.Label1.Size = New System.Drawing.Size(62, 20)
         Me.Label1.TabIndex = 40
         Me.Label1.Text = "UserID"
         '

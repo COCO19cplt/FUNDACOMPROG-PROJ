@@ -16,7 +16,7 @@ Public Class Form1
         ComboBox1.Items.Add("LOGIN INTERFACE")
         ComboBox1.Items.Add("ABOUT US")
         If ComboBox1.SelectedItem = "LOGIN INTERFACE" Then
-            Me.Show()
+            Form2.Show()
         ElseIf ComboBox1.SelectedItem = "ABOUT US" Then
             Form3.Show()
         End If

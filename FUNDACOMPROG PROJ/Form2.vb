@@ -59,6 +59,11 @@ Public Class Form2
         End Try
     End Sub
 
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Form17.Show()
+    End Sub
+
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
