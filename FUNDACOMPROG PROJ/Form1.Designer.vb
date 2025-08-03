@@ -32,33 +32,36 @@ Partial Class Form1
         Me.ComboBox1.ForeColor = System.Drawing.Color.Tan
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"LOGIN INTERFACE", "ABOUT US", "SERVICES"})
-        Me.ComboBox1.Location = New System.Drawing.Point(540, 61)
+        Me.ComboBox1.Location = New System.Drawing.Point(634, 42)
+        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(242, 28)
+        Me.ComboBox1.Size = New System.Drawing.Size(216, 24)
         Me.ComboBox1.TabIndex = 4
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button1.Font = New System.Drawing.Font("Showcard Gothic", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(815, 49)
+        Me.Button1.BackColor = System.Drawing.Color.Tan
+        Me.Button1.Font = New System.Drawing.Font("Modern No. 20", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(229, 427)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(204, 49)
+        Me.Button1.Size = New System.Drawing.Size(179, 41)
         Me.Button1.TabIndex = 6
         Me.Button1.Text = "AVAIL SERVICES"
         Me.Button1.UseVisualStyleBackColor = False
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.FUNDACOMPROG_PROJ.My.Resources.Resources.really_great_site
+        Me.BackgroundImage = Global.FUNDACOMPROG_PROJ.My.Resources.Resources._1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1033, 630)
+        Me.ClientSize = New System.Drawing.Size(862, 545)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.ComboBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form1"
         Me.ResumeLayout(False)
 

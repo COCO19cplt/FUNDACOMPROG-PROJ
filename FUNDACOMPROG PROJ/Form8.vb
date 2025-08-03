@@ -153,4 +153,12 @@ Public Class Form8
     Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
         Form11.Show()
     End Sub
+
+    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
+
+    End Sub
+
+    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged
+
+    End Sub
 End Class

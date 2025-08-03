@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Form3
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,47 +20,34 @@ Partial Class Form3
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"LOGIN INTERFACE", "ABOUT", "SERVICES"})
-        Me.ComboBox1.Location = New System.Drawing.Point(557, 7)
+        Me.ComboBox1.Items.AddRange(New Object() {"", "ABOUT", "SERVICES", "LOG IN"})
+        Me.ComboBox1.Location = New System.Drawing.Point(696, 39)
+        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(173, 28)
+        Me.ComboBox1.Size = New System.Drawing.Size(154, 24)
         Me.ComboBox1.TabIndex = 4
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button1.Font = New System.Drawing.Font("Showcard Gothic", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(781, -5)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(204, 49)
-        Me.Button1.TabIndex = 7
-        Me.Button1.Text = "AVAIL SERVICES"
-        Me.Button1.UseVisualStyleBackColor = False
         '
         'Form3
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.FUNDACOMPROG_PROJ.My.Resources.Resources.really_great_site__1_
+        Me.BackgroundImage = Global.FUNDACOMPROG_PROJ.My.Resources.Resources.loadlog__1_
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1033, 630)
-        Me.Controls.Add(Me.Button1)
+        Me.ClientSize = New System.Drawing.Size(862, 545)
         Me.Controls.Add(Me.ComboBox1)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Form3"
         Me.Text = "Form3"
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents Button1 As Button
 End Class

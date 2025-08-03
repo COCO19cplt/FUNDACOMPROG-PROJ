@@ -304,5 +304,44 @@
   <ItemGroup>
     <None Include="Resources\really great site %282%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loadlog1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loadlog %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loadlog %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loadlog %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loadlog %284%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loadlog %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loadlog %286%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loadlog %287%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loadlog %288%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loadlog %288%291.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

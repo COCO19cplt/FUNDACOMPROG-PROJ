@@ -39,6 +39,7 @@ Partial Class Form15
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button4 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -46,103 +47,135 @@ Partial Class Form15
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(794, 102)
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label5.Location = New System.Drawing.Point(659, 202)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(47, 17)
+        Me.Label5.Size = New System.Drawing.Size(70, 21)
         Me.Label5.TabIndex = 56
         Me.Label5.Text = "ItemID"
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(688, 102)
+        Me.TextBox4.Location = New System.Drawing.Point(550, 200)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(100, 22)
         Me.TextBox4.TabIndex = 55
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(748, 441)
+        Me.Button3.BackColor = System.Drawing.Color.Tan
+        Me.Button3.Font = New System.Drawing.Font("Modern No. 20", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button3.Location = New System.Drawing.Point(753, 492)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(110, 32)
+        Me.Button3.Size = New System.Drawing.Size(99, 33)
         Me.Button3.TabIndex = 54
-        Me.Button3.Text = "Button3"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.Button3.Text = "DELETE"
+        Me.Button3.UseVisualStyleBackColor = False
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(404, 441)
+        Me.Button2.BackColor = System.Drawing.Color.Tan
+        Me.Button2.Font = New System.Drawing.Font("Modern No. 20", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button2.Location = New System.Drawing.Point(648, 492)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(110, 32)
+        Me.Button2.Size = New System.Drawing.Size(99, 33)
         Me.Button2.TabIndex = 53
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Button2.Text = "UPDATE"
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(60, 441)
+        Me.Button1.BackColor = System.Drawing.Color.Tan
+        Me.Button1.Font = New System.Drawing.Font("Modern No. 20", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button1.Location = New System.Drawing.Point(543, 492)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(110, 32)
+        Me.Button1.Size = New System.Drawing.Size(99, 33)
         Me.Button1.TabIndex = 52
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.Text = "INSERT"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(794, 204)
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label8.Location = New System.Drawing.Point(659, 298)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(83, 17)
+        Me.Label8.Size = New System.Drawing.Size(117, 21)
         Me.Label8.TabIndex = 51
         Me.Label8.Text = "CostPerUnit"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(814, 308)
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label4.Location = New System.Drawing.Point(679, 394)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(33, 17)
+        Me.Label4.Size = New System.Drawing.Size(48, 21)
         Me.Label4.TabIndex = 50
         Me.Label4.Text = "Unit"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(814, 255)
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label3.Location = New System.Drawing.Point(679, 346)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(61, 17)
+        Me.Label3.Size = New System.Drawing.Size(87, 21)
         Me.Label3.TabIndex = 49
         Me.Label3.Text = "Quantity"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(794, 153)
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label2.Location = New System.Drawing.Point(659, 250)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(71, 17)
+        Me.Label2.Size = New System.Drawing.Size(102, 21)
         Me.Label2.TabIndex = 48
         Me.Label2.Text = "ItemName"
         '
         'DataGridView1
         '
+        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(31, 31)
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 152)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(607, 368)
+        Me.DataGridView1.Size = New System.Drawing.Size(518, 377)
         Me.DataGridView1.TabIndex = 47
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(688, 48)
+        Me.DateTimePicker1.CalendarFont = New System.Drawing.Font("Modern No. 20", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker1.CalendarForeColor = System.Drawing.Color.Tan
+        Me.DateTimePicker1.CalendarMonthBackground = System.Drawing.Color.Tan
+        Me.DateTimePicker1.CalendarTitleBackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.DateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.Tan
+        Me.DateTimePicker1.CalendarTrailingForeColor = System.Drawing.Color.Tan
+        Me.DateTimePicker1.Font = New System.Drawing.Font("Modern No. 20", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker1.Location = New System.Drawing.Point(547, 152)
         Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 22)
+        Me.DateTimePicker1.Size = New System.Drawing.Size(229, 24)
         Me.DateTimePicker1.TabIndex = 46
         '
         'ComboBox2
         '
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(688, 359)
+        Me.ComboBox2.Location = New System.Drawing.Point(550, 442)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(121, 24)
         Me.ComboBox2.TabIndex = 45
@@ -150,7 +183,7 @@ Partial Class Form15
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(688, 306)
+        Me.ComboBox1.Location = New System.Drawing.Point(550, 392)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(121, 24)
         Me.ComboBox1.TabIndex = 44
@@ -158,7 +191,7 @@ Partial Class Form15
         '
         'NumericUpDown1
         '
-        Me.NumericUpDown1.Location = New System.Drawing.Point(688, 255)
+        Me.NumericUpDown1.Location = New System.Drawing.Point(550, 344)
         Me.NumericUpDown1.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
         Me.NumericUpDown1.Name = "NumericUpDown1"
         Me.NumericUpDown1.Size = New System.Drawing.Size(120, 22)
@@ -166,14 +199,14 @@ Partial Class Form15
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(688, 204)
+        Me.TextBox3.Location = New System.Drawing.Point(550, 296)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(100, 22)
         Me.TextBox3.TabIndex = 42
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(688, 153)
+        Me.TextBox1.Location = New System.Drawing.Point(550, 248)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(100, 22)
         Me.TextBox1.TabIndex = 41
@@ -181,17 +214,35 @@ Partial Class Form15
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(814, 361)
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label1.Location = New System.Drawing.Point(679, 442)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(51, 17)
+        Me.Label1.Size = New System.Drawing.Size(70, 21)
         Me.Label1.TabIndex = 40
         Me.Label1.Text = "UserID"
+        '
+        'Button4
+        '
+        Me.Button4.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button4.Font = New System.Drawing.Font("Modern No. 20", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.ForeColor = System.Drawing.Color.Tan
+        Me.Button4.Location = New System.Drawing.Point(394, 101)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(74, 30)
+        Me.Button4.TabIndex = 57
+        Me.Button4.Text = "SEARCH"
+        Me.Button4.UseVisualStyleBackColor = False
         '
         'Form15
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(918, 504)
+        Me.BackgroundImage = Global.FUNDACOMPROG_PROJ.My.Resources.Resources.loadlog__8_1
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(862, 545)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.TextBox4)
         Me.Controls.Add(Me.Button3)
@@ -234,4 +285,5 @@ Partial Class Form15
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents Button4 As Button
 End Class

@@ -30,7 +30,6 @@ Partial Class Form16
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
@@ -40,21 +39,25 @@ Partial Class Form16
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button4 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(694, 174)
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label3.Location = New System.Drawing.Point(641, 296)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(45, 17)
+        Me.Label3.Size = New System.Drawing.Size(62, 21)
         Me.Label3.TabIndex = 77
         Me.Label3.Text = "Notes"
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(586, 171)
+        Me.TextBox2.Location = New System.Drawing.Point(536, 296)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(100, 22)
         Me.TextBox2.TabIndex = 76
@@ -62,103 +65,118 @@ Partial Class Form16
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(703, 358)
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Snow
+        Me.Label5.Location = New System.Drawing.Point(643, 436)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(75, 17)
+        Me.Label5.Size = New System.Drawing.Size(103, 21)
         Me.Label5.TabIndex = 75
         Me.Label5.Text = "ExpenseID"
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(586, 355)
+        Me.TextBox4.Location = New System.Drawing.Point(534, 434)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(100, 22)
         Me.TextBox4.TabIndex = 74
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(782, 450)
+        Me.Button3.BackColor = System.Drawing.Color.Tan
+        Me.Button3.Font = New System.Drawing.Font("Modern No. 20", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button3.Location = New System.Drawing.Point(747, 488)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(97, 34)
         Me.Button3.TabIndex = 73
-        Me.Button3.Text = "Button3"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.Button3.Text = "DELETE"
+        Me.Button3.UseVisualStyleBackColor = False
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(416, 450)
+        Me.Button2.BackColor = System.Drawing.Color.Tan
+        Me.Button2.Font = New System.Drawing.Font("Modern No. 20", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button2.Location = New System.Drawing.Point(643, 488)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(97, 34)
         Me.Button2.TabIndex = 72
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Button2.Text = "UPDATE"
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(50, 450)
+        Me.Button1.BackColor = System.Drawing.Color.Tan
+        Me.Button1.Font = New System.Drawing.Font("Modern No. 20", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button1.Location = New System.Drawing.Point(539, 488)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(97, 34)
         Me.Button1.TabIndex = 71
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.Text = "INSERT"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(692, 129)
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label8.Location = New System.Drawing.Point(639, 251)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(56, 17)
+        Me.Label8.Size = New System.Drawing.Size(83, 21)
         Me.Label8.TabIndex = 70
         Me.Label8.Text = "Amount"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(805, 221)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(96, 17)
-        Me.Label7.TabIndex = 69
-        Me.Label7.Text = "Expense Date"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(723, 266)
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Snow
+        Me.Label4.Location = New System.Drawing.Point(660, 342)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(51, 17)
+        Me.Label4.Size = New System.Drawing.Size(70, 21)
         Me.Label4.TabIndex = 68
         Me.Label4.Text = "UserID"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(692, 84)
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label2.Location = New System.Drawing.Point(639, 206)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(98, 17)
+        Me.Label2.Size = New System.Drawing.Size(131, 21)
         Me.Label2.TabIndex = 67
         Me.Label2.Text = "Expense Type"
         '
         'DataGridView1
         '
+        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(17, 20)
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 148)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(543, 395)
+        Me.DataGridView1.Size = New System.Drawing.Size(512, 375)
         Me.DataGridView1.TabIndex = 66
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(586, 216)
+        Me.DateTimePicker1.Font = New System.Drawing.Font("Modern No. 20", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker1.Location = New System.Drawing.Point(536, 158)
         Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 22)
+        Me.DateTimePicker1.Size = New System.Drawing.Size(234, 24)
         Me.DateTimePicker1.TabIndex = 65
         '
         'ComboBox2
         '
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(586, 308)
+        Me.ComboBox2.Location = New System.Drawing.Point(534, 387)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(121, 24)
         Me.ComboBox2.TabIndex = 64
@@ -166,7 +184,7 @@ Partial Class Form16
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(586, 261)
+        Me.ComboBox1.Location = New System.Drawing.Point(534, 340)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(121, 24)
         Me.ComboBox1.TabIndex = 63
@@ -174,14 +192,14 @@ Partial Class Form16
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(586, 126)
+        Me.TextBox3.Location = New System.Drawing.Point(536, 251)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(100, 22)
         Me.TextBox3.TabIndex = 62
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(586, 81)
+        Me.TextBox1.Location = New System.Drawing.Point(536, 206)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(100, 22)
         Me.TextBox1.TabIndex = 61
@@ -189,17 +207,35 @@ Partial Class Form16
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(723, 313)
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Snow
+        Me.Label1.Location = New System.Drawing.Point(660, 389)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(58, 17)
+        Me.Label1.Size = New System.Drawing.Size(82, 21)
         Me.Label1.TabIndex = 60
         Me.Label1.Text = "OrderID"
+        '
+        'Button4
+        '
+        Me.Button4.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button4.Font = New System.Drawing.Font("Modern No. 20", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.ForeColor = System.Drawing.Color.Tan
+        Me.Button4.Location = New System.Drawing.Point(394, 102)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(75, 29)
+        Me.Button4.TabIndex = 78
+        Me.Button4.Text = "SEARCH"
+        Me.Button4.UseVisualStyleBackColor = False
         '
         'Form16
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(918, 504)
+        Me.BackgroundImage = Global.FUNDACOMPROG_PROJ.My.Resources.Resources.loadlog__8_
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(862, 545)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.Label5)
@@ -208,7 +244,6 @@ Partial Class Form16
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.DataGridView1)
@@ -234,7 +269,6 @@ Partial Class Form16
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents Label8 As Label
-    Friend WithEvents Label7 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents DataGridView1 As DataGridView
@@ -244,4 +278,5 @@ Partial Class Form16
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents Button4 As Button
 End Class
