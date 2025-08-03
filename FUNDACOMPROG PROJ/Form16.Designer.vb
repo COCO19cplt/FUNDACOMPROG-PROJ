@@ -22,6 +22,7 @@ Partial Class Form16
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form16))
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -30,16 +31,15 @@ Partial Class Form16
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button4 = New System.Windows.Forms.Button()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -68,7 +68,7 @@ Partial Class Form16
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Snow
-        Me.Label5.Location = New System.Drawing.Point(643, 436)
+        Me.Label5.Location = New System.Drawing.Point(643, 388)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(103, 21)
         Me.Label5.TabIndex = 75
@@ -76,7 +76,7 @@ Partial Class Form16
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(534, 434)
+        Me.TextBox4.Location = New System.Drawing.Point(534, 386)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(100, 22)
         Me.TextBox4.TabIndex = 74
@@ -129,18 +129,6 @@ Partial Class Form16
         Me.Label8.TabIndex = 70
         Me.Label8.Text = "Amount"
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Snow
-        Me.Label4.Location = New System.Drawing.Point(660, 342)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(70, 21)
-        Me.Label4.TabIndex = 68
-        Me.Label4.Text = "UserID"
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -173,23 +161,6 @@ Partial Class Form16
         Me.DateTimePicker1.Size = New System.Drawing.Size(234, 24)
         Me.DateTimePicker1.TabIndex = 65
         '
-        'ComboBox2
-        '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(534, 387)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(121, 24)
-        Me.ComboBox2.TabIndex = 64
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(534, 340)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 24)
-        Me.ComboBox1.TabIndex = 63
-        Me.ComboBox1.Text = "`"
-        '
         'TextBox3
         '
         Me.TextBox3.Location = New System.Drawing.Point(536, 251)
@@ -210,7 +181,7 @@ Partial Class Form16
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Gadugi", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Snow
-        Me.Label1.Location = New System.Drawing.Point(660, 389)
+        Me.Label1.Location = New System.Drawing.Point(660, 341)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(82, 21)
         Me.Label1.TabIndex = 60
@@ -228,6 +199,21 @@ Partial Class Form16
         Me.Button4.Text = "SEARCH"
         Me.Button4.UseVisualStyleBackColor = False
         '
+        'TextBox5
+        '
+        Me.TextBox5.Location = New System.Drawing.Point(23, 105)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(356, 22)
+        Me.TextBox5.TabIndex = 79
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(534, 340)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 24)
+        Me.ComboBox1.TabIndex = 80
+        '
         'Form16
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -235,6 +221,8 @@ Partial Class Form16
         Me.BackgroundImage = Global.FUNDACOMPROG_PROJ.My.Resources.Resources.loadlog__8_
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(862, 545)
+        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.TextBox5)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.TextBox2)
@@ -244,17 +232,15 @@ Partial Class Form16
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.DateTimePicker1)
-        Me.Controls.Add(Me.ComboBox2)
-        Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Form16"
-        Me.Text = "Form16"
+        Me.Text = "  "
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -269,14 +255,13 @@ Partial Class Form16
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents Label8 As Label
-    Friend WithEvents Label4 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents DateTimePicker1 As DateTimePicker
-    Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Button4 As Button
+    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents ComboBox1 As ComboBox
 End Class

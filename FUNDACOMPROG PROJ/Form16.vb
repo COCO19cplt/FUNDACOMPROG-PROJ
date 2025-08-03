@@ -1,11 +1,12 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class Form16
+    Public CurrentUserID As Integer
+
     Dim conn As New MySqlConnection("server=localhost;user id=root;password=;database=loadlog")
 
     Private Sub Form16_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadExpenses()
-        LoadUsers()
         LoadOrders()
     End Sub
 
@@ -21,29 +22,15 @@ Public Class Form16
         End Try
     End Sub
 
-    Private Sub LoadUsers()
-        Try
-            Dim cmd As New MySqlCommand("SELECT UserID FROM users", conn)
-            Dim adapter As New MySqlDataAdapter(cmd)
-            Dim dt As New DataTable()
-            adapter.Fill(dt)
-            ComboBox1.DataSource = dt
-            ComboBox1.DisplayMember = "UserID"
-            ComboBox1.ValueMember = "UserID"
-        Catch ex As Exception
-            MessageBox.Show("Error loading users: " & ex.Message)
-        End Try
-    End Sub
-
     Private Sub LoadOrders()
         Try
             Dim cmd As New MySqlCommand("SELECT OrderID FROM orders", conn)
             Dim adapter As New MySqlDataAdapter(cmd)
             Dim dt As New DataTable()
             adapter.Fill(dt)
-            ComboBox2.DataSource = dt
-            ComboBox2.DisplayMember = "OrderID"
-            ComboBox2.ValueMember = "OrderID"
+            ComboBox1.DataSource = dt
+            ComboBox1.DisplayMember = "OrderID"
+            ComboBox1.ValueMember = "OrderID"
         Catch ex As Exception
             MessageBox.Show("Error loading orders: " & ex.Message)
         End Try
@@ -54,11 +41,11 @@ Public Class Form16
         Dim expenseType As String = TextBox1.Text.Trim()
         Dim amountStr As String = TextBox2.Text.Trim()
         Dim notes As String = TextBox3.Text.Trim()
-        Dim userID As String = ComboBox1.Text
-        Dim orderID As String = ComboBox2.Text
+        Dim orderID As String = ComboBox1.Text
         Dim expenseDate As String = DateTimePicker1.Value.ToString("yyyy-MM-dd HH:mm:ss")
+        Dim userID As Integer = CurrentUserID
 
-        If expenseType = "" Or amountStr = "" Or userID = "" Or orderID = "" Then
+        If expenseType = "" Or amountStr = "" Then
             MessageBox.Show("Required fields must not be empty.")
             Return
         End If
@@ -87,9 +74,9 @@ Public Class Form16
         Dim expenseType As String = TextBox1.Text.Trim()
         Dim amountStr As String = TextBox2.Text.Trim()
         Dim notes As String = TextBox3.Text.Trim()
-        Dim userID As String = ComboBox1.Text
-        Dim orderID As String = ComboBox2.Text
+        Dim orderID As String = ComboBox1.Text
         Dim expenseDate As String = DateTimePicker1.Value.ToString("yyyy-MM-dd HH:mm:ss")
+        Dim userID As Integer = CurrentUserID
 
         If expenseID = "" Then
             MessageBox.Show("Enter ExpenseID to update.")
@@ -151,5 +138,3 @@ Public Class Form16
         End Try
     End Sub
 End Class
-
-

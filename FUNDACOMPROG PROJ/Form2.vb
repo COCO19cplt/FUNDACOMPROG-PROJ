@@ -5,6 +5,9 @@ Public Class Form2
     Dim query As String
     Dim cmd As MySqlCommand
 
+    ' Public static property to hold UserID after login
+    Public Shared LoggedInUserID As Integer
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim username As String = TextBox1.Text.Trim().Replace("'", "''")
         Dim password As String = TextBox2.Text.Trim().Replace("'", "''")
@@ -21,28 +24,30 @@ Public Class Form2
             Dim reader As MySqlDataReader = cmd.ExecuteReader()
 
             If reader.Read() Then
+                ' Get UserID from the users table
+                LoggedInUserID = Convert.ToInt32(reader("UserID"))
+
                 Dim role As String = reader("Role").ToString().ToLower()
                 If (username = "johnluis@pgmail.com" And password = "pilaradmin") OrElse
                    (username = "iyannaangela@gmail.com" And password = "marquezadmin") Then
                     ' Admins
                     Form4.Show()
-
                     Me.Hide()
                 ElseIf username = "rosaly@gmail.com" And password = "staffrosaly" OrElse
                        (username = "judith@gmail.com" And password = "staffjudith") OrElse
                        (username = "mary@gmail.com" And password = "staffmary") Then
                     ' Staff
-                    staffform.Show()
+                    Staffform.Show()
                     Me.Hide()
                 ElseIf (username = "edgar@gmail.com" And password = "inventoryedgar") Then
                     ' Inventory Manager
-                    Form15.Show()
-
+                    Dim invForm As New Form15()
+                    invForm.CurrentUserID = LoggedInUserID  ' Pass UserID to inventory form
+                    invForm.Show()
                     Me.Hide()
                 Else
                     ' All other users are customers
                     Form12.Show()
-
                     Me.Hide()
                 End If
             Else
@@ -59,9 +64,9 @@ Public Class Form2
         End Try
     End Sub
 
-
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Form17.Show()
+        Me.Hide()
     End Sub
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load

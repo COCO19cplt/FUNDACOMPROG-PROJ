@@ -54,6 +54,7 @@ Public Class Form17
 
             MessageBox.Show("Account created successfully! You may now log in.")
             Me.Close()
+            Form2.Show()
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
         Finally

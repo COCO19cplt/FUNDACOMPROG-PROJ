@@ -29,18 +29,21 @@ Partial Class Form1
         '
         'ComboBox1
         '
-        Me.ComboBox1.ForeColor = System.Drawing.Color.Tan
+        Me.ComboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.ComboBox1.Font = New System.Drawing.Font("Modern No. 20", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox1.ForeColor = System.Drawing.Color.SaddleBrown
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"LOGIN INTERFACE", "ABOUT US", "SERVICES"})
         Me.ComboBox1.Location = New System.Drawing.Point(634, 42)
         Me.ComboBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(216, 24)
+        Me.ComboBox1.Size = New System.Drawing.Size(216, 25)
         Me.ComboBox1.TabIndex = 4
+        Me.ComboBox1.Text = "CHOOSE A TAB HERE"
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.Color.Tan
+        Me.Button1.BackColor = System.Drawing.Color.Sienna
         Me.Button1.Font = New System.Drawing.Font("Modern No. 20", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.White
         Me.Button1.Location = New System.Drawing.Point(208, 428)

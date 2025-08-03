@@ -1,11 +1,12 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class Form15
+    Public CurrentUserID As Integer
+
     Dim conn As New MySqlConnection("server=localhost;user id=root;password=;database=loadlog")
 
     Private Sub Form15_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadInventory()
-        LoadUsers()
         LoadUnits()
     End Sub
 
@@ -21,20 +22,6 @@ Public Class Form15
         End Try
     End Sub
 
-    Private Sub LoadUsers()
-        Try
-            Dim cmd As New MySqlCommand("SELECT UserID FROM users", conn)
-            Dim adapter As New MySqlDataAdapter(cmd)
-            Dim dt As New DataTable()
-            adapter.Fill(dt)
-            ComboBox2.DataSource = dt
-            ComboBox2.DisplayMember = "UserID"
-            ComboBox2.ValueMember = "UserID"
-        Catch ex As Exception
-            MessageBox.Show("Error loading users: " & ex.Message)
-        End Try
-    End Sub
-
     Private Sub LoadUnits()
         ComboBox1.Items.Clear()
         ComboBox1.Items.AddRange(New String() {"pcs", "kg", "liters", "packs"})
@@ -42,21 +29,25 @@ Public Class Form15
     End Sub
 
     ' INSERT
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim itemName As String = TextBox1.Text.Trim()
-        Dim quantity As Integer = NumericUpDown1.Value
+        Dim quantityStr As String = TextBox2.Text.Trim()
         Dim unit As String = ComboBox1.Text.Trim()
         Dim lastRestocked As String = DateTimePicker1.Value.ToString("yyyy-MM-dd HH:mm:ss")
         Dim costPerUnitStr As String = TextBox3.Text.Trim()
-        Dim userID As String = ComboBox2.Text.Trim()
+        Dim userID As Integer = CurrentUserID
 
+        ' Validation
         If itemName = "" Then
             MessageBox.Show("Item Name is required.")
+            Return
+        ElseIf quantityStr = "" Then
+            MessageBox.Show("Quantity is required.")
             Return
         ElseIf unit = "" Then
             MessageBox.Show("Unit is required.")
             Return
-        ElseIf userID = "" Then
+        ElseIf userID = 0 Then
             MessageBox.Show("UserID is required.")
             Return
         End If
@@ -65,7 +56,7 @@ Public Class Form15
         Dim costPart As String = If(costPerUnitStr = "", "NULL", costPerUnitStr)
 
         Dim query As String = "INSERT INTO inventory (ItemName, Quantity, Unit, LastRestocked, CostPerUnit, UserID) VALUES (" &
-                              "'" & itemName.Replace("'", "''") & "', " & quantity & ", '" & unit.Replace("'", "''") & "', " &
+                              "'" & itemName.Replace("'", "''") & "', " & quantityStr & ", '" & unit.Replace("'", "''") & "', " &
                               restockedPart & ", " & costPart & ", " & userID & ")"
 
         Try
@@ -82,14 +73,14 @@ Public Class Form15
     End Sub
 
     ' UPDATE
-    Private Sub Button2_Click(sender As Object, e As EventArgs)
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim itemID As String = TextBox4.Text.Trim()
         Dim itemName As String = TextBox1.Text.Trim()
-        Dim quantity As Integer = NumericUpDown1.Value
+        Dim quantityStr As String = TextBox2.Text.Trim()
         Dim unit As String = ComboBox1.Text.Trim()
         Dim lastRestocked As String = DateTimePicker1.Value.ToString("yyyy-MM-dd HH:mm:ss")
         Dim costPerUnitStr As String = TextBox3.Text.Trim()
-        Dim userID As String = ComboBox2.Text.Trim()
+        Dim userID As Integer = CurrentUserID
 
         If itemID = "" Then
             MessageBox.Show("Enter ItemID to update.")
@@ -101,7 +92,7 @@ Public Class Form15
 
         Dim query As String = "UPDATE inventory SET " &
                               "ItemName = '" & itemName.Replace("'", "''") & "', " &
-                              "Quantity = " & quantity & ", " &
+                              "Quantity = " & quantityStr & ", " &
                               "Unit = '" & unit.Replace("'", "''") & "', " &
                               "LastRestocked = " & restockedPart & ", " &
                               "CostPerUnit = " & costPart & ", " &
@@ -126,7 +117,7 @@ Public Class Form15
     End Sub
 
     ' DELETE
-    Private Sub Button3_Click(sender As Object, e As EventArgs)
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Dim itemID As String = TextBox4.Text.Trim()
 
         If itemID = "" Then
@@ -153,7 +144,4 @@ Public Class Form15
         End Try
     End Sub
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
-
-    End Sub
 End Class

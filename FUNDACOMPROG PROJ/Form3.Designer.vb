@@ -27,13 +27,16 @@ Partial Class Form3
         '
         'ComboBox1
         '
+        Me.ComboBox1.Font = New System.Drawing.Font("Modern No. 20", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox1.ForeColor = System.Drawing.Color.SaddleBrown
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"", "ABOUT", "SERVICES", "LOG IN"})
-        Me.ComboBox1.Location = New System.Drawing.Point(696, 39)
+        Me.ComboBox1.Location = New System.Drawing.Point(657, 39)
         Me.ComboBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(154, 24)
+        Me.ComboBox1.Size = New System.Drawing.Size(193, 25)
         Me.ComboBox1.TabIndex = 4
+        Me.ComboBox1.Text = "CHOOSE A TAB HERE"
         '
         'Form3
         '

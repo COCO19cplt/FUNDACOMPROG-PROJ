@@ -119,7 +119,7 @@ Partial Class Staffform
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(71, 76)
+        Me.Button1.Location = New System.Drawing.Point(22, 394)
         Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(67, 18)

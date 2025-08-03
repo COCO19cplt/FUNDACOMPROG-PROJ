@@ -31,13 +31,15 @@ Partial Class Form2
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button1.Location = New System.Drawing.Point(359, 396)
+        Me.Button1.BackColor = System.Drawing.Color.Tan
+        Me.Button1.Font = New System.Drawing.Font("Modern No. 20", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button1.Location = New System.Drawing.Point(348, 389)
         Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(143, 26)
+        Me.Button1.Size = New System.Drawing.Size(166, 38)
         Me.Button1.TabIndex = 0
+        Me.Button1.Text = "LOG IN"
         Me.Button1.UseVisualStyleBackColor = False
         '
         'TextBox1
@@ -55,17 +57,20 @@ Partial Class Form2
         Me.TextBox2.Location = New System.Drawing.Point(344, 312)
         Me.TextBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TextBox2.Size = New System.Drawing.Size(274, 22)
         Me.TextBox2.TabIndex = 2
         '
         'Button2
         '
-        Me.Button2.BackColor = System.Drawing.Color.Transparent
+        Me.Button2.BackColor = System.Drawing.Color.Tan
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button2.Location = New System.Drawing.Point(697, 38)
+        Me.Button2.Font = New System.Drawing.Font("Modern No. 20", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Button2.Location = New System.Drawing.Point(682, 33)
         Me.Button2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(143, 26)
+        Me.Button2.Size = New System.Drawing.Size(158, 31)
         Me.Button2.TabIndex = 3
         Me.Button2.Text = "Create Account"
         Me.Button2.UseVisualStyleBackColor = False

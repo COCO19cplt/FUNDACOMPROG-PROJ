@@ -17,13 +17,16 @@ Public Class Form1
         ComboBox1.Items.Add("ABOUT US")
         If ComboBox1.SelectedItem = "LOGIN INTERFACE" Then
             Form2.Show()
+            Me.Hide()
         ElseIf ComboBox1.SelectedItem = "ABOUT US" Then
             Form3.Show()
+            Me.Hide()
         End If
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         Form3.Show()
+        Me.Hide()
     End Sub
 End Class
 

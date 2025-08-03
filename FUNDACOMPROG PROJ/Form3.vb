@@ -9,10 +9,15 @@ Public Class Form3
         ComboBox1.Items.Add("ABOUT US")
         If ComboBox1.SelectedItem = "HOME" Then
             Form1.Show()
+            Me.Hide()
         ElseIf ComboBox1.SelectedItem = "LOG IN" Then
             Form2.Show()
+            Me.Hide()
         End If
     End Sub
 
+    Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
 
